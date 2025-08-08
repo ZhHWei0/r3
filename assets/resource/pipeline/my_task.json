@@ -1,11 +1,69 @@
 {
-    "MyTask1": {},
-    "MyTask2": {},
-    "MyTask3": {},
-    "MyTask4": {
-        "recognition": "Custom",
-        "custom_recognition": "my_reco_222",
-        "action": "Custom",
-        "custom_action": "my_action_111"
+    "领取邮件": {
+        "recognition": "TemplateMatch",
+        "template": "忍3邮箱.png",
+        "action": "Click",
+        "next": {
+            "邮件一键领取"
+        }
+    },
+    "邮件一键领取": {
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "action": "Click",
+        "next": {
+            "退出邮件"
+        }
+    },
+    "退出邮件": {
+        "recognition": "TemplateMatch",
+        "template": "邮箱x.png",
+        "action": "Click",
+        "next": {
+            "领取好友饭团"
+        }
+    },
+    "领取好友饭团": {
+        "recognition": "TemplateMatch",
+        "template": "好友图标.png",
+        "action": "Click",
+        "next": {
+            "领取饭团"
+        }
+    },
+    "领取饭团": {
+        "recognition": "TemplateMatch",
+        "template": "收取饭团.png",
+        "action": "Click",
+        "next": {
+            "饭团全部收取"
+        }
+    },
+    "饭团全部收取": {
+        "recognition": "OCR",
+        "expected": "全部收取",
+        "action": "Click",
+        "next": {
+            "退出饭团界面"
+        }
+    },
+    "退出饭团界面": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "array[21,23,62,46]"
+            }
+        },
+        "next": {
+            "饭团返回主界面"
+        }
+    },
+    "饭团返回主界面": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "array[21,23,62,46]"
+            }
+        },
     }
 }
