@@ -3,67 +3,77 @@
         "recognition": "TemplateMatch",
         "template": "忍3邮箱.png",
         "action": "Click",
-        "next": {
+        "next": [
             "邮件一键领取"
-        }
+        ]
     },
     "邮件一键领取": {
         "recognition": "OCR",
-        "expected": "一键领取",
+        "expected": "领取",
         "action": "Click",
-        "next": {
+        "next": [
+            "确认邮箱奖励"
+        ]
+    },
+    "确认邮箱奖励":{
+        "recognition":{
+            "type":"TemplateMatch",
+            "param":{
+                "expected":"确认"
+            }
+        },
+        "action":{
+            "type":"Click",
+            "next":[
             "退出邮件"
+        ]
         }
     },
     "退出邮件": {
         "recognition": "TemplateMatch",
         "template": "邮箱x.png",
         "action": "Click",
-        "next": {
+        "next": [
             "领取好友饭团"
-        }
+        ]
     },
     "领取好友饭团": {
         "recognition": "TemplateMatch",
         "template": "好友图标.png",
         "action": "Click",
-        "next": {
+        "next": [
             "领取饭团"
-        }
+        ]
     },
     "领取饭团": {
         "recognition": "TemplateMatch",
         "template": "收取饭团.png",
         "action": "Click",
-        "next": {
+        "next": [
             "饭团全部收取"
-        }
+        ]
     },
     "饭团全部收取": {
         "recognition": "OCR",
         "expected": "全部收取",
         "action": "Click",
-        "next": {
+        "next": [
             "退出饭团界面"
-        }
+        ]
     },
     "退出饭团界面": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": "array[21,23,62,46]"
-            }
-        },
-        "next": {
+        "recognition": "TemplateMatch",
+        "template" : "1次x.png",
+        "action":"Click",
+        "next": [
             "饭团返回主界面"
-        }
+        ]
     },
+    
     "饭团返回主界面": {
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": "array[21,23,62,46]"
-            }
-        },
+        "recognition": "TemplateMatch",
+        "template" : "2次x.png",
+        "action":"Click"
+        
     }
 }
